@@ -1,0 +1,32 @@
+.main-container {
+    margin: 0 auto;
+}
+
+.searchbar {
+    padding: 2rem;
+}
+
+.header {
+    width: auto;
+}
+
+.searchbar-alignment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 20px;
+}
+
+.searchbox-container {
+    width: 70%;
+}
+
+.filter-wrapper {
+    background-color: white;
+    border-radius: 4px;
+}
+
+
+
+
+

@@ -1,0 +1,23 @@
+.img-alignment {
+    position: relative;
+}
+
+.some-container,
+.bottom-section-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/* .container, */
+.description-container,
+.some-container,
+.bottom-section-container {
+    margin-top: 2rem;
+}
+
+/* .owner-alignment {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 8px;
+} */

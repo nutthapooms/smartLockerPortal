@@ -1,0 +1,33 @@
+.container {
+    margin: 0 auto;
+}
+
+.header {
+    padding: 2rem;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+
+.header-logo {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+}
+
+.menu .menu-link {
+    padding-right: 2rem;
+    text-decoration: none;
+    color: white;
+
+}
