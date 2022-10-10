@@ -1,7 +1,7 @@
 import React, { Component, useState, useEffect } from 'react'
 import axios from 'axios'
-import Loader from './Loader'
-import ItemCard from './ItemCard'
+import Loader from './Loader.js'
+import ItemCard from './ItemCard.js'
 
 const APIRequest = api => {
     const [ data, setData ] = useState()

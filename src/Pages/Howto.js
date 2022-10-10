@@ -1,5 +1,5 @@
 import React from 'react'
-import About from '../components/About.cjs'
+import About from '../components/About.js'
 
 function Howto() {
   return (

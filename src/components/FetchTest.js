@@ -1,5 +1,5 @@
 import React from 'react'
-import DataFetch from './DataFetch'
+import DataFetch from './DataFetch.js'
 
 export default function FetchTest() {
   return (
