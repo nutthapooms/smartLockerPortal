@@ -31,7 +31,7 @@ function ItemCatalog() {
         })
 
         .catch(() => {
-          setItems({
+          setItems(
             loading: false,
             data: null,
             err: true
@@ -54,19 +54,18 @@ function ItemCatalog() {
         )
       }
 
-      const newColumnStart = ''
-
     if(items.data) {
-      itemCardContent = 
-        // <div className='item-card-container em-l-container'>
-          items.data.map((item, key) => //fetch data from api as json and map as item list
+      return (
+        <div className='item-card-container em-l-container'>
+          {items.data.map(item, key => 
             <div key={item.id}>
-              <ItemCard 
-                item={item}
-              />
-            </div>
-        )
-        // </div>
+            <ItemCard 
+              item={item} 
+            />
+          </div>
+          )}
+        </div>
+      )
     }
   
 

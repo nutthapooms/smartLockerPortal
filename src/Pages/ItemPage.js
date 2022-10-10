@@ -1,11 +1,14 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import Loader from '../components/Loader'
+import LoanModal from '../components/LoanModal'
+import useModal from '../hooks/useModal'
 import '../components/stylesheets/customcss/itemPage.css'
 
 function ItemPage() {
+    const { isShowing, toggle } = useModal()
     const { id } = useParams()
     const api = `https://6339ae2d66857f698fba10a2.mockapi.io/dbapi/itemDetails/${id}`
     const [ item, setItem ] = useState({
@@ -81,13 +84,10 @@ function ItemPage() {
                         </ul>
                     </div>
                     {/* end of availability section */}
-                    <div className='#'>
-                      <Link to={`/item/${item.data.id}/loan`}>
-                        <button className='em-c-btn em-c-btn--primary'>
-                            <span>Loan</span>
-                        </button>
-                      </Link>
-                    </div>
+                    <LoanModal 
+                      isShowing={isShowing}
+                      hide={toggle}
+                    />
                     {/* end of loan button */}
                 </div>
                 {/* end of right grid */}

@@ -4,8 +4,12 @@ import Home from './Pages/Home'
 import MyItem from './Pages/MyItem'
 import Howto from './Pages/Howto'
 import ItemPage from './Pages/ItemPage'
-import LoanPage from './Pages/LoanPage'
 import { Routes, Route } from "react-router-dom"
+import './components/stylesheets/customcss/Header.css'
+import './components/stylesheets/customcss/itemCard.css'
+import './components/stylesheets/customcss/itemPage.css'
+
+
 
 // import MyItem from './components/MyItem'
 // import { BrowserRouter as Route} from 'react-router-dom'
@@ -32,11 +36,6 @@ function App() {
         <Routes>
             <Route path='/item/:id' element={<ItemPage />}></Route>
         </Routes>
-        <Routes>
-            <Route path='/item/:id/loan' element={<LoanPage />}></Route>
-        </Routes>
-
-
     </>
   );
 }
