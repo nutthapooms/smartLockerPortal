@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import ItemCard from './ItemCard'
-import Loader from './Loader'
+import ItemCard from './ItemCard.js'
+import Loader from './Loader.js'
 import '../components/stylesheets/customcss/itemCard.css'
 
 

@@ -2,9 +2,9 @@ import React from 'react'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import Loader from '../components/Loader'
-import LoanModal from '../components/LoanModal'
-import useModal from '../hooks/useModal'
+import Loader from '../components/Loader.js'
+import LoanModal from '../components/LoanModal.js'
+import useModal from '../hooks/useModal.js'
 import '../components/stylesheets/customcss/itemPage.css'
 
 function ItemPage() {

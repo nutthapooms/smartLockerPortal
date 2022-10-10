@@ -1,8 +1,8 @@
 import React from 'react'
-import SearchBar from '../components/searchBar'
-import ItemCatalog from '../components/ItemCatalog'
-import LoanModal from '../components/LoanModal'
-import useModal from '../hooks/useModal'
+import SearchBar from '../components/searchBar.js'
+import ItemCatalog from '../components/ItemCatalog.js'
+import LoanModal from '../components/LoanModal.js'
+import useModal from '../hooks/useModal.js'
 
 
 function Home() {
