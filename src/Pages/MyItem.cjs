@@ -1,4 +1,4 @@
-import ItemComponent from "../components/ItemCatalog.js"
+import ItemComponent from "../components/ItemCatalog.cjs"
 
 function MyItem() {
     return (
