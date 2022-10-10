@@ -8,6 +8,8 @@ import { Routes, Route } from "react-router-dom"
 import './components/stylesheets/customcss/Header.css'
 import './components/stylesheets/customcss/itemCard.css'
 import './components/stylesheets/customcss/itemPage.css'
+import './components/stylesheets/css/em-unity-1.7.1.css'
+import './components/stylesheets/css/em-unity-1.7.1.min.css'
 
 
 

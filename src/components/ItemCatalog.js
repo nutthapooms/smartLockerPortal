@@ -6,7 +6,8 @@ import '../components/stylesheets/customcss/itemCard.css'
 
 
 function ItemCatalog() {
-  const api = `https://6339ae2d66857f698fba10a2.mockapi.io/dbapi/itemDetails/`
+  // const api = `https://6339ae2d66857f698fba10a2.mockapi.io/dbapi/itemDetails/`
+  const api = 'https://smartlocker20220922110147.azurewebsites.net/api/admin/units/container?containerId=1'
   const [items, setItems] = useState({
     loading: false,
     data: null,
@@ -60,6 +61,8 @@ if (items.data) {
     <div >
       {items.data.map((item, key )=>
         <div className='item-card-container em-l-container' key={item.id}>
+          {/* {item.id} */}
+
           <ItemCard
             item={item}
           />
@@ -72,7 +75,7 @@ if (items.data) {
 
 return (
   <div className='item-card-container em-l-container'>
-    {itemCardContent}
+    {/* {itemCardContent} */}
   </div>
 )
 }

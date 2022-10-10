@@ -4,7 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
+import axios from 'axios'
+// import "../web.config"
 
+axios.interceptors.request.use(
+  function(successfulReq) {
+    successfulReq.headers['Authorization'] = 'Bearer test123'
+    return successfulReq
+  }, 
+  function(error) {
+    return Promise.reject(error)
+  }
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

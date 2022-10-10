@@ -9,16 +9,17 @@ function ItemCard(props) {
             <Link to={`/item/${props.item.id}`}>
                 <div className='#'>
                     <img 
-                        src={props.item.itemImg} 
-                        alt={props.item.itemName}>
+                        src={'https://smartlocker20220922110147.azurewebsites.net/api/images/1'} 
+                        // src={'https://smartlocker20220922110147.azurewebsites.net/api/images/'+props.item.images[0]} 
+                        alt={props.item.item.name}>
                     </img>
                 </div>
             </Link>
             {/* end of item card header */}
                 <div className='item-card-footer'>
-                    <h3>{props.item.itemName}</h3>
+                    <h3>{props.item.item.name}</h3>
                     <div className='#'>
-                        Availability:{[props.item.amount.xommon] + [props.item.amount.itsc]} 
+                        {/* Availability:{[props.item.amount.xommon] + [props.item.amount.itsc]}  */}
                     </div> 
                     <Link to={`/item/${props.item.id}`}>
                         <div className='em-c-text-link'>

@@ -10,7 +10,7 @@ import '../components/stylesheets/customcss/itemPage.css'
 function ItemPage() {
     const { isShowing, toggle } = useModal()
     const { id } = useParams()
-    const api = `https://6339ae2d66857f698fba10a2.mockapi.io/dbapi/itemDetails/${id}`
+    const api = `https://smartlocker20220922110147.azurewebsites.net/api/admin/units/${id}`
     const [ item, setItem ] = useState({
         loading: false,
         data: null
