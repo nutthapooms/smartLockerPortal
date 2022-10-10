@@ -1,6 +1,6 @@
 import React from 'react'
 import { IconContext } from 'react-icons'
-import { AiOutlineSearch } from 'react-icons/ai/index.esm.js'
+import { AiOutlineSearch } from 'react-icons/ai'
 import './stylesheets/customcss/searchBar.css'
 
 function SearchBar() {
