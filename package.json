@@ -28,6 +28,12 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(@react-native|react-native|react-native-vector-icons)/)"
+    ]
+  },
   "proxy": "http://localhost:3000/",
   "eslintConfig": {
     "extends": [
