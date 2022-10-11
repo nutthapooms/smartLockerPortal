@@ -2,8 +2,7 @@ export const msalConfig = {
     auth: {
       clientId: "a61a1ea8-c8a9-47bf-a84f-caba25dd5879",
       authority: "https://login.microsoftonline.com/d1ee1acd-bc7a-4bc4-a787-938c49a83906", // This is a URL (e.g. https://login.microsoftonline.com/{your tenant ID})
-      redirectUri: "http://localhost:3000",
-    //   scopes: "api://3a4bd202-bede-4dd7-8321-cda964ab6fee/.default"
+      redirectUri: "https://smartlocker-atita.azurewebsites.net/",
     },
     cache: {
       cacheLocation: "sessionStorage", // This configures where your cache will be stored

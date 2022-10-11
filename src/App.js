@@ -19,46 +19,42 @@ import { PageLayout } from './components/PageLayout.js'
 
 
 
-// import MyItem from './components/MyItem'
-// import { BrowserRouter as Route} from 'react-router-dom'
-
-
-
-
-
 function ProfileContent() {
   const { instance, accounts } = useMsal();
   const [graphData, setGraphData] = useState(null);
 
+  function handleLogin(instance) {
+    instance.loginRedirect(loginRequest).catch(e => {
+      console.error(e);
+    });
+  }
   const name = accounts[0] && accounts[0].name;
 
-  function RequestProfileData() {
-      const request = {
-          ...loginRequest,
-          account: accounts[0]
-      };
+  // function RequestProfileData() {
+  const request = {
+    ...loginRequest,
+    account: accounts[0]
+  };
 
-      // Silently acquires an access token which is then attached to a request for Microsoft Graph data
-      instance.acquireTokenSilent(request).then((response) => {
-          callMsGraph(response.accessToken).then(response => setGraphData(response));
-          console.log(response.accessToken)
-          sessionStorage.setItem('Mytoken',response.accessToken)
-      }).catch((e) => {
-          instance.acquireTokenPopup(request).then((response) => {
-              callMsGraph(response.accessToken).then(response => setGraphData(response));
-          });
-      });
-  }
+  // Silently acquires an access token which is then attached to a request for Microsoft Graph data
+  instance.acquireTokenSilent(request).then((response) => {
+    // callMsGraph(response.accessToken).then(response => setGraphData(response));
+    sessionStorage.setItem('Mytoken', response.accessToken)
+  }).catch((e) => {
+    instance.acquireTokenPopup(request).then((response) => {
+      // callMsGraph(response.accessToken).then(response => setGraphData(response));
+    });
+  });
 
   return (
-      <>
-          <h5 className="card-title">Welcome {name}</h5>
-          {graphData ? 
+    <>
+      {/* <h5 className="card-title">Welcome {name}</h5> */}
+      {/* {graphData ? 
               <ProfileData graphData={graphData} />
               :
               <button variant="secondary" onClick={RequestProfileData}>Request Profile Information</button>
-          }
-      </>
+          } */}
+    </>
   );
 };
 
@@ -70,30 +66,31 @@ function App() {
       <PageLayout>
         <AuthenticatedTemplate>
           <ProfileContent />
+          <div className='#'>
+            <Routes>
+              <Route path='/' element={<Home />}></Route>
+            </Routes>
+          </div>
+          <div className='#'>
+            <Routes>
+              <Route path='/howto' element={<Howto />}></Route>
+            </Routes>
+          </div>
+          <div className='#'>
+            <Routes>
+              <Route path='/myitem' element={<MyItem />}></Route>
+            </Routes>
+          </div>
+          <Routes>
+            <Route path='/item/:id' element={<ItemPage />}></Route>
+          </Routes>
         </AuthenticatedTemplate>
         <UnauthenticatedTemplate>
           <p>You are not signed in! Please sign in.</p>
         </UnauthenticatedTemplate>
       </PageLayout>
 
-      <div className='#'>
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-        </Routes>
-      </div>
-      <div className='#'>
-        <Routes>
-          <Route path='/howto' element={<Howto />}></Route>
-        </Routes>
-      </div>
-      <div className='#'>
-        <Routes>
-          <Route path='/myitem' element={<MyItem />}></Route>
-        </Routes>
-      </div>
-      <Routes>
-        <Route path='/item/:id' element={<ItemPage />}></Route>
-      </Routes>
+
     </>
   );
 }
