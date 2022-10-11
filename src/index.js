@@ -5,24 +5,30 @@ import App from './App.js';
 import reportWebVitals from './reportWebVitals.js';
 import { BrowserRouter } from "react-router-dom";
 import axios from 'axios'
+import { PublicClientApplication } from "@azure/msal-browser";
+import { MsalProvider } from "@azure/msal-react";
+import { msalConfig } from "./authConfig";
 // import "../web.config"
+// const accessToken = authProvider.getAccessToken();
 
-axios.interceptors.request.use(
-  function(successfulReq) {
-    successfulReq.headers['Authorization'] = 'Bearer test123'
-    return successfulReq
-  }, 
-  function(error) {
-    return Promise.reject(error)
-  }
-);
-
+// axios.interceptors.request.use(
+//   function(successfulReq) {
+//     successfulReq.headers['Authorization'] = 'Bearer '+accessToken;
+//     return successfulReq
+//   }, 
+//   function(error) {
+//     return Promise.reject(error)
+//   }
+// );
+const msalInstance = new PublicClientApplication(msalConfig);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <MsalProvider instance={msalInstance}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </MsalProvider>
   </React.StrictMode>
 );
 

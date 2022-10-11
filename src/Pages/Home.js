@@ -9,13 +9,14 @@ function Home() {
   const { isShowing, toggle } = useModal()
   return (
     <>
-        <SearchBar />
-        <button onClick={toggle}>Loan</button>
-        <LoanModal 
+      
+      <SearchBar />
+      <button onClick={toggle}>Loan</button>
+      <LoanModal
         isShowing={isShowing}
         hide={toggle}
-        />
-        <ItemCatalog />
+      />
+      <ItemCatalog />
 
     </>
   )
